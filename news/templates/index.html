@@ -1,0 +1,28 @@
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+    color: #000;
+    background: #1ff;
+}	
+		</style>
+<html>
+
+	
+	<h1>Hello Welcome to ViewMusic!</h1>
+		<h3> It is powered by Django !</h3>
+	<div id="content">
+		{% block content %} {%endblock%}
+	</div>
+	{% block home %}
+	<div id="home">
+		<p><a href="artists"> Here  </a> is the list of the Artists</p>
+		<p><a href="createartist"> click here </a> to add more artists </p>	
+	</div>
+	{% endblock %}
+	
+	
+	
+</html>
