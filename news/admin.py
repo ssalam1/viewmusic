@@ -7,7 +7,7 @@ class ArtistAdmin(admin.ModelAdmin):
 class AlbumAdmin(admin.ModelAdmin):
 	"""docstring for ArtistAdmin"""
 	list_display = 'name',
-	
+	prepopulated_fields = {'id' : ('name',)}
 
 # Register your models here.
 admin.site.register(Artist,ArtistAdmin)

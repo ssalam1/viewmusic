@@ -20,8 +20,9 @@ admin.autodiscover()
 urlpatterns = [
 	url(r'^$','news.views.index'),
 	url(r'^createartist$','news.views.creatartist'),
+    url(r'^artists/(?P<id>\d+)/editartist$','news.views.editartist'),
     url(r'^artists$','news.views.home'),
     url(r'^artists/(?P<id>\d+)$','news.views.details'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'','news.views.notfound'),
+    #url(r'','news.views.notfound'),
 ]

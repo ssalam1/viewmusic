@@ -3,6 +3,16 @@ from django.http import HttpResponse,HttpRequest,HttpResponseRedirect
 from django.forms import ModelForm
 from news.models import *
 # Create your views here.
+def editartist(request,id):
+	artist = Artist.objects.get(pk = id)
+	if request.method == "GET":
+		form= editform()
+		return render (request,'create.html',{'form':form})
+	elif request.method == "POST":
+		form = editform(request.POST)   # This line of code is not being used....
+		artist.details = request.POST['details'] 
+		artist.save()
+		return HttpResponseRedirect('/artists')
 def creatartist(request):
 	if request.method == "GET":
 		form = ArtistForm()
